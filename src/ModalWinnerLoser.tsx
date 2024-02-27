@@ -1,0 +1,32 @@
+import styles from "./ModalWinnerLoser.module.css";
+
+type ModalWinnerLoserProps = {
+    isWinner?: boolean
+    isLoser?: boolean
+}
+
+const openModal = () => {
+    const modal: HTMLElement | null = document.getElementById("winnerLoserModal");
+
+    if (modal) {
+        modal.style.display = "block";
+    }
+};
+
+export function ModalWinnerLoser({isWinner = false, isLoser = false} : ModalWinnerLoserProps) {
+    {isWinner || isLoser ? openModal() : null}
+    
+    return (
+        <div id="winnerLoserModal" className={`${styles.modal}`}>
+            <div className={`${styles.modalContent}`}>
+                <div className={isWinner == true ? `${styles.modalHeaderWinner}` : `${styles.modalHeaderLoser}`}>
+                <h2>
+                    {isWinner && "Congrats! Press 'Enter' To Retry"}
+                    {isLoser && "Nice Try! Press 'Enter' To Retry"}
+                </h2>
+                </div>
+            </div>
+        </div>
+    )
+}
+

@@ -3,7 +3,9 @@ import words from "./wordList.json"
 import BODY_PARTS from "./BodyParts";
 import { HangmanDrawing } from "./HangmanDrawing";
 import { HangmanWord } from "./HangmanWord";
-import { Keyboard } from "./Keyboard";
+import { ModalKeyboard } from "./ModalKeyboard";
+import { ModalWinnerLoser } from "./ModalWinnerLoser";
+// import { ModalWinnerLoser } from "./ModalWinnerLoser";
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)]
@@ -67,6 +69,12 @@ function App() {
       setGuessedLetters([]);
       
       setWordToGuess(getWord());
+
+      const modal: HTMLElement | null = document.getElementById("winnerLoserModal");
+
+      if (modal) {
+          modal.style.display = "none";
+      }
     }
 
     document.addEventListener("keypress", handler);
@@ -92,34 +100,36 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler);
     }
-  }, [])
+  }, [guessedLetters]);
 
   return (
-    <div style={{ 
-        maxWidth: "800px",
-        display: "flex",
-        flexDirection: "column", //stack on top of another
-        gap: "2rem", //make all component ot have gap 2rem
-        margin: "0 auto", //to center everything in 800px
-        alignItems: "center",
-      }}
-    >
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>
-        {isWinner && "Congrats! Press 'Enter' To Retry"}
-        {isLoser && "Nice Try! Press 'Enter' To Retry"}
-      </div>
-      
-      <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
-      <HangmanWord revealWord={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
-
-      <div style={{ alignSelf: "stretch" }}>
-        <Keyboard
+    <div>
+      <ModalKeyboard
           disabled={isWinner || isLoser}
           activeLetter={guessedLetters.filter(letter => wordToGuess.includes(letter))}
           inactiveLetter={incorrectLetters}
           addGuessedLetter={addGuessedLetter}
         />
-      </div>
+      <ModalWinnerLoser isWinner={isWinner} isLoser={isLoser}/>
+      {/* <div style={{ fontSize: "2rem", textAlign: "center" }}>
+        {isWinner && "Congrats! Press 'Enter' To Retry"}
+        {isLoser && "Nice Try! Press 'Enter' To Retry"}
+      </div> */}
+      <div style={{
+          marginTop: "20px",
+          display: "flex",
+          flexDirection: "column", //stack on top of another
+          gap: "2rem", //make all component ot have gap 2rem
+          margin: "0 auto", //to center everything in 800px
+          alignItems: "center",
+          minWidth: "70%",
+          right: "0",
+          position: "absolute"
+        }}
+      >
+        <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
+        <HangmanWord revealWord={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
+      </div>      
     </div>
   )
 }

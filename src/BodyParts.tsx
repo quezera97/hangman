@@ -47,7 +47,7 @@ const RIGHT_LEG = (
         height: "100px",
         background: "black", 
         position: "absolute",
-        bottom: "100px",
+        bottom: "50px",
         right: "-25px",
         rotate: "150deg"
      }}></div>
@@ -58,7 +58,7 @@ const LEFT_LEG = (
         height: "100px",
         background: "black", 
         position: "absolute",
-        bottom: "100px",
+        bottom: "50px",
         right: "25px",
         rotate: "-150deg"
      }}></div>
