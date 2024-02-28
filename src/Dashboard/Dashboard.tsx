@@ -22,7 +22,7 @@ export function Dashboard({ startGame, handleButtonClick }: DashboardProps) {
 
       <div style={{ textAlign: "center" }}>
         <button onClick={() => handleButtonClick(!startGame)} className="honk-unique" style={{ 
-            fontSize: '2vw',
+            fontSize: '3vw',
             padding: '1vh',
             background: 'none',
             boxShadow: '1vh 1vh black'

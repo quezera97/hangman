@@ -146,11 +146,9 @@ function App() {
           
           <div style={{
               display: "flex",
-              flexDirection: "column", //stack on top of another
-              gap: "2rem", //make all component ot have gap 2rem
-              margin: "0 auto", //to center everything in 800px
+              flexDirection: "column",
               alignItems: "center",
-              minWidth: "70%",
+              width: "70vw",
               right: "0",
               position: "absolute"
             }}

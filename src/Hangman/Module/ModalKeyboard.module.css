@@ -4,7 +4,7 @@
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 30%; /* Full width */
+  width: 30vw; /* Full width */
   height: 100%; /* Full height */
   overflow-y: scroll; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
@@ -22,7 +22,7 @@
   overflow-y: scroll;
   background-color: rgba(255, 255, 255, 0.09);
   height: 100%;
-  width: 30%;
+  width: 30vw;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
