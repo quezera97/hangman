@@ -12,7 +12,7 @@ const HEAD = (
 const BODY = (
     <div style={{ 
         width: "10px",
-        height: "120px",
+        height: "24vh",
         background: "white", 
         position: "absolute",
         top: "110px",

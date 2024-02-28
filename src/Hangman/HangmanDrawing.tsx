@@ -26,7 +26,7 @@ export function HangmanDrawing({ numberOfGuesses } : HangmanDrawingProps) {
                 background: "red"
             }}/>
             <div style={{ 
-                height: "59vh", 
+                height: "50vh", 
                 background: "none",
             }}/>
         </div>
