@@ -3,20 +3,24 @@ import words from "./wordList.json"
 import BODY_PARTS from "./Hangman/BodyParts";
 import backgroundImage from './assets/background.jpg';
 import dashboardImage from './assets/dashboard.jpg';
+import backgroundAudio from './assets/background_music.mp3';
 import { HangmanDrawing } from "./Hangman/HangmanDrawing";
 import { HangmanWord } from "./Hangman/HangmanWord";
 import { ModalKeyboard } from "./Hangman/ModalKeyboard";
 import { ModalWinnerLoser } from "./Hangman/ModalWinnerLoser";
 import { Dashboard } from "./Dashboard/Dashboard";
-// import { ModalWinnerLoser } from "./ModalWinnerLoser";
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)]
 }
 
 function App() {
-  const [wordToGuess, setWordToGuess] = useState((getWord));
-  const [startGame, setStartGame] = useState(false);
+  const [wordToGuess, setWordToGuess] = useState<string>(getWord);
+  const [startGame, setStartGame] = useState<boolean>(false);
+  
+  const handleButtonClick = () => {
+    setStartGame(!startGame);
+  };
 
   const [guessedLetters, setGuessedLetters] = useState<string[]>(['']);
 
@@ -106,12 +110,18 @@ function App() {
     }
   }, [guessedLetters]);
 
-  const handleButtonClick = () => {
-    setStartGame(!startGame);
-  };
+  useEffect(() => {
+    const audio: HTMLAudioElement | null = document.getElementById("background_audio_id") as HTMLAudioElement | null;
 
+    if (audio) {
+      audio.play();
+    }
+  }, [startGame]);
+  
   return (
-    <div>      
+    <div>
+      <audio id="background_audio_id" src={backgroundAudio}/>
+
       {startGame == false 
         ? <div>
             <img src={dashboardImage} alt="Background Image" style={{ 
