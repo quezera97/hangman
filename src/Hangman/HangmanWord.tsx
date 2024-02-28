@@ -15,14 +15,14 @@ export function HangmanWord({revealWord = false, guessedLetters, wordToGuess} : 
         fontFamily: "monospace",
     }}>
         {wordToGuess.split("").map((letter, index) => (
-            <span style={{ borderBottom: ".1em solid black" }} 
+            <span style={{ borderBottom: ".1em solid white" }} 
                 key={index} //just to make each of letter is unique
             >
                 <span style={{ 
                     visibility: guessedLetters.includes(letter) || revealWord 
                         ? "visible" 
                         : "hidden",
-                        color: !guessedLetters.includes(letter) && revealWord ? "red" : "black"
+                        color: !guessedLetters.includes(letter) && revealWord ? "red" : "white"
                  }}>
                     {letter}
                 </span>

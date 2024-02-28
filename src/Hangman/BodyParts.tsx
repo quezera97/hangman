@@ -3,7 +3,7 @@ const HEAD = (
         width: "50px",
         height: "50px",
         borderRadius: "100%",
-        border: "10px solid black",
+        border: "10px solid white",
         position: "absolute",
         top: "40px",
         right: "-30px",
@@ -13,7 +13,7 @@ const BODY = (
     <div style={{ 
         width: "10px",
         height: "120px",
-        background: "black", 
+        background: "white", 
         position: "absolute",
         top: "110px",
         right: "0px",
@@ -23,7 +23,7 @@ const RIGHT_HAND = (
     <div style={{ 
         width: "10px",
         height: "80px",
-        background: "black", 
+        background: "white", 
         position: "absolute",
         top: "65px",
         right: "-35px",
@@ -34,7 +34,7 @@ const LEFT_HAND = (
     <div style={{ 
         width: "10px",
         height: "80px",
-        background: "black", 
+        background: "white", 
         position: "absolute",
         top: "65px",
         right: "35px",
@@ -45,7 +45,7 @@ const RIGHT_LEG = (
     <div style={{ 
         width: "10px",
         height: "100px",
-        background: "black", 
+        background: "white", 
         position: "absolute",
         bottom: "50px",
         right: "-25px",
@@ -56,7 +56,7 @@ const LEFT_LEG = (
     <div style={{ 
         width: "10px",
         height: "100px",
-        background: "black", 
+        background: "white", 
         position: "absolute",
         bottom: "50px",
         right: "25px",

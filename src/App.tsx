@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useState } from "react"
 import words from "./wordList.json"
-import BODY_PARTS from "./BodyParts";
-import { HangmanDrawing } from "./HangmanDrawing";
-import { HangmanWord } from "./HangmanWord";
-import { ModalKeyboard } from "./ModalKeyboard";
-import { ModalWinnerLoser } from "./ModalWinnerLoser";
+import BODY_PARTS from "./Hangman/BodyParts";
+import backgroundImage from './assets/background.jpg';
+import dashboardImage from './assets/dashboard.jpg';
+import { HangmanDrawing } from "./Hangman/HangmanDrawing";
+import { HangmanWord } from "./Hangman/HangmanWord";
+import { ModalKeyboard } from "./Hangman/ModalKeyboard";
+import { ModalWinnerLoser } from "./Hangman/ModalWinnerLoser";
+import { Dashboard } from "./Dashboard/Dashboard";
 // import { ModalWinnerLoser } from "./ModalWinnerLoser";
 
 function getWord() {
@@ -13,6 +16,7 @@ function getWord() {
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState((getWord));
+  const [startGame, setStartGame] = useState(false);
 
   const [guessedLetters, setGuessedLetters] = useState<string[]>(['']);
 
@@ -102,34 +106,61 @@ function App() {
     }
   }, [guessedLetters]);
 
+  const handleButtonClick = () => {
+    setStartGame(!startGame); // Toggle the startGame state
+  };
+
   return (
-    <div>
-      <ModalKeyboard
-          disabled={isWinner || isLoser}
-          activeLetter={guessedLetters.filter(letter => wordToGuess.includes(letter))}
-          inactiveLetter={incorrectLetters}
-          addGuessedLetter={addGuessedLetter}
-        />
-      <ModalWinnerLoser isWinner={isWinner} isLoser={isLoser}/>
-      {/* <div style={{ fontSize: "2rem", textAlign: "center" }}>
-        {isWinner && "Congrats! Press 'Enter' To Retry"}
-        {isLoser && "Nice Try! Press 'Enter' To Retry"}
-      </div> */}
-      <div style={{
-          marginTop: "20px",
-          display: "flex",
-          flexDirection: "column", //stack on top of another
-          gap: "2rem", //make all component ot have gap 2rem
-          margin: "0 auto", //to center everything in 800px
-          alignItems: "center",
-          minWidth: "70%",
-          right: "0",
-          position: "absolute"
-        }}
-      >
-        <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
-        <HangmanWord revealWord={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
-      </div>      
+    <div>      
+      {startGame == false 
+        ? <div>
+            <img src={dashboardImage} alt="Background Image" style={{ 
+                position: 'absolute',
+                top: "0",
+                left: "0",
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                zIndex: '-1',
+            }}/>
+           <Dashboard startGame={startGame} handleButtonClick={handleButtonClick}/>     
+          </div>
+      : <div>
+          <img src={backgroundImage} alt="Background Image" style={{ 
+              position: 'absolute',
+              top: "0",
+              left: "0",
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: '-1',
+          }}/>
+          <ModalKeyboard
+            disabled={isWinner || isLoser}
+            activeLetter={guessedLetters.filter(letter => wordToGuess.includes(letter))}
+            inactiveLetter={incorrectLetters}
+            addGuessedLetter={addGuessedLetter}
+          />
+
+          <ModalWinnerLoser isWinner={isWinner} isLoser={isLoser}/>
+          
+          <div style={{
+              display: "flex",
+              flexDirection: "column", //stack on top of another
+              gap: "2rem", //make all component ot have gap 2rem
+              margin: "0 auto", //to center everything in 800px
+              alignItems: "center",
+              minWidth: "70%",
+              right: "0",
+              position: "absolute"
+            }}
+          >
+            <br/>
+            <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
+            <HangmanWord revealWord={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
+          </div>
+        </div>
+      }
     </div>
   )
 }

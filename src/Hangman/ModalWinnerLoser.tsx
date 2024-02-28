@@ -1,4 +1,4 @@
-import styles from "./ModalWinnerLoser.module.css";
+import styles from "./Module/ModalWinnerLoser.module.css";
 
 type ModalWinnerLoserProps = {
     isWinner?: boolean

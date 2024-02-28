@@ -13,7 +13,7 @@ export function HangmanDrawing({ numberOfGuesses } : HangmanDrawingProps) {
             <div style={{ 
                 height: "50px", 
                 width: "10px", 
-                background: "black", 
+                background: "white", 
                 top: 0,
                 right: 0,
                 position: "absolute", 
@@ -21,19 +21,19 @@ export function HangmanDrawing({ numberOfGuesses } : HangmanDrawingProps) {
             <div style={{ 
                 height: "10px", 
                 width: "150px", 
-                background: "black", 
+                background: "white", 
                 marginLeft: "125px"
             }}/>
             <div style={{ 
                 height: "350px", 
                 width: "10px", 
-                background: "black", 
+                background: "white", 
                 marginLeft: "125px"
             }}/>
             <div style={{ 
                 height: "10px", 
                 width: "250px", 
-                background: "black"
+                background: "white"
             }}/>
 
         </div>

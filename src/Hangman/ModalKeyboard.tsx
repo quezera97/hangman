@@ -1,5 +1,5 @@
 import { Keyboard } from "./Keyboard";
-import styles from "./ModalKeyboard.module.css";
+import styles from "./Module/ModalKeyboard.module.css";
 
 type KeyboardModalProps = {
     disabled?: boolean
