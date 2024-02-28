@@ -20,10 +20,10 @@ export function ModalWinnerLoser({isWinner = false, isLoser = false} : ModalWinn
         <div id="winnerLoserModal" className={`${styles.modal}`}>
             <div className={`${styles.modalContent}`}>
                 <div className={isWinner == true ? `${styles.modalHeaderWinner}` : `${styles.modalHeaderLoser}`}>
-                <h2>
+                <p className="honk-unique">
                     {isWinner && "Congrats! Press 'Enter' To Retry"}
                     {isLoser && "Nice Try! Press 'Enter' To Retry"}
-                </h2>
+                </p>
                 </div>
             </div>
         </div>

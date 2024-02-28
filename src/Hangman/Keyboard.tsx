@@ -54,7 +54,8 @@ export function Keyboard({disabled = false, activeLetter, inactiveLetter, addGue
                         ${styles.btn}
                         ${isActive ? styles.active : ""}
                         ${isInactive ? styles.inactive : ""}
-                    `}
+                        honk-unique
+                    ` }
                 >
                     {key}
                 </button>

@@ -38,16 +38,14 @@
 
 .modalHeaderWinner {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: rgba(0,255,0,0.3);
   text-align: center;
   font-size: xx-large;
 }
 
 .modalHeaderLoser {
   padding: 2px 16px;
-  background-color: #b85c5c;
-  color: white;
+  background-color: rgba(255,0,0,0.3);
   text-align: center;
   font-size: xx-large;
 }

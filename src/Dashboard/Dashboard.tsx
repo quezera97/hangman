@@ -1,8 +1,6 @@
-import React from 'react';
-
 type DashboardProps = {
   startGame: boolean;
-  handleButtonClick: React.Dispatch<React.SetStateAction<boolean>>;
+  handleButtonClick:(startGame: boolean) => void;
 };
 
 export function Dashboard({ startGame, handleButtonClick }: DashboardProps) {

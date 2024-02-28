@@ -6,7 +6,7 @@ const HEAD = (
         border: "10px solid white",
         position: "absolute",
         top: "40px",
-        right: "-30px",
+        right: "80px",
      }}></div>
 )
 const BODY = (
@@ -16,7 +16,7 @@ const BODY = (
         background: "white", 
         position: "absolute",
         top: "110px",
-        right: "0px",
+        right: "110px",
      }}></div>
 )
 const RIGHT_HAND = (
@@ -25,8 +25,8 @@ const RIGHT_HAND = (
         height: "80px",
         background: "white", 
         position: "absolute",
-        top: "65px",
-        right: "-35px",
+        top: "90px",
+        right: "150px",
         rotate: "60deg"
      }}></div>
 )
@@ -36,8 +36,8 @@ const LEFT_HAND = (
         height: "80px",
         background: "white", 
         position: "absolute",
-        top: "65px",
-        right: "35px",
+        top: "90px",
+        right: "75px",
         rotate: "-60deg"
      }}></div>
 )
@@ -48,7 +48,7 @@ const RIGHT_LEG = (
         background: "white", 
         position: "absolute",
         bottom: "50px",
-        right: "-25px",
+        right: "85px",
         rotate: "150deg"
      }}></div>
 )
@@ -59,7 +59,7 @@ const LEFT_LEG = (
         background: "white", 
         position: "absolute",
         bottom: "50px",
-        right: "25px",
+        right: "135px",
         rotate: "-150deg"
      }}></div>
 )

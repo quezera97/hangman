@@ -7,35 +7,28 @@ type HangmanDrawingProps = {
 export function HangmanDrawing({ numberOfGuesses } : HangmanDrawingProps) {
     return (
         <div style={{ 
-            position: "relative", //to make sure all the component body parts in this container
+            position: "relative",
+            border: "white 5px solid"
         }}>
             {BODY_PARTS.slice(0, numberOfGuesses)}
+            
             <div style={{ 
-                height: "50px", 
+                height: "40px", 
                 width: "10px", 
-                background: "white", 
+                background: "red", 
                 top: 0,
-                right: 0,
+                right: '110px',
                 position: "absolute", 
             }}/>
             <div style={{ 
-                height: "10px", 
-                width: "150px", 
-                background: "white", 
-                marginLeft: "125px"
-            }}/>
-            <div style={{ 
-                height: "350px", 
-                width: "10px", 
-                background: "white", 
-                marginLeft: "125px"
-            }}/>
-            <div style={{ 
-                height: "10px", 
+                height: "12px", 
                 width: "250px", 
-                background: "white"
+                background: "red"
             }}/>
-
+            <div style={{ 
+                height: "59vh", 
+                background: "none",
+            }}/>
         </div>
     )
 }
