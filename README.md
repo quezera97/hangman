@@ -11,10 +11,10 @@
 </p>
 
 ### Screenshots:
-<img src="https://github.com/quezera97/hangman/assets/66286710/091f2fbb-15b7-4538-a245-edb935999849" width="400" height="300">
-<img src="https://github.com/quezera97/hangman/assets/66286710/088b7418-e05c-49b6-8d7e-a368fa60cefa" width="400" height="300">
-<img src="https://github.com/quezera97/hangman/assets/66286710/0569deb7-e502-4219-9c27-5929c8c680e2" width="400" height="300">
-<img src="https://github.com/quezera97/hangman/assets/66286710/4f9eac84-56af-4674-a55b-0c25a9a2ec42" width="400" height="300">
+<img src="https://github.com/quezera97/hangman/assets/66286710/091f2fbb-15b7-4538-a245-edb935999849" width="450" height="300">
+<img src="https://github.com/quezera97/hangman/assets/66286710/088b7418-e05c-49b6-8d7e-a368fa60cefa" width="450" height="300">
+<img src="https://github.com/quezera97/hangman/assets/66286710/0569deb7-e502-4219-9c27-5929c8c680e2" width="450" height="300">
+<img src="https://github.com/quezera97/hangman/assets/66286710/4f9eac84-56af-4674-a55b-0c25a9a2ec42" width="450" height="300">
 
 ### Description:
 
