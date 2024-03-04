@@ -12,7 +12,7 @@ const HEAD = (
 const BODY = (
     <div style={{ 
         width: "10px",
-        height: "24vh",
+        height: "15vh",
         background: "white", 
         position: "absolute",
         top: "110px",
@@ -47,7 +47,7 @@ const RIGHT_LEG = (
         height: "100px",
         background: "white", 
         position: "absolute",
-        bottom: "50px",
+        top: "32vh",
         right: "85px",
         rotate: "150deg"
      }}></div>
@@ -58,7 +58,7 @@ const LEFT_LEG = (
         height: "100px",
         background: "white", 
         position: "absolute",
-        bottom: "50px",
+        top: "32vh",
         right: "135px",
         rotate: "-150deg"
      }}></div>
